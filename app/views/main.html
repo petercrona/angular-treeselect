@@ -1,0 +1,10 @@
+<script type="text/ng-template" id="templateId">
+  <multiselect-dialog tree-data="treeData" 
+					  save-handler="saveHandler(tree, metaFields);"
+					  meta-fields="metaFields"
+					  only-leaf-nodes="true"
+					  items-name="{{::'Places'}}">
+  </multiselect-dialog>
+</script>
+
+<button ng-click="openDialog()">Create new counter group</button>

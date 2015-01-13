@@ -1,0 +1,49 @@
+.multiselect-tree {
+	border: 1px solid #DADADA;
+}
+
+.multiselect-tree div {
+	padding: 5px;
+	border-bottom: 1px solid #DADADA;
+}
+
+.multiselect-tree div.checkbox {
+	margin: 0;
+}
+
+.multiselect-tree-lvl1 {
+	background: #FFF;
+	font-weight: bold;
+}
+
+.multiselect-tree-lvl2,
+.multiselect-tree-lvl3,
+.multiselect-tree-lvl4,
+.multiselect-tree-lvl5,
+.multiselect-tree-lvl6 {
+	background: #FAFAFA;
+}
+
+div.multiselect-tree-lvl2 {
+	padding-left: 15px;
+}
+
+div.multiselect-tree-lvl3 {
+	padding-left: 25px;
+}
+
+div.multiselect-tree-lvl4 {
+	padding-left: 35px;
+}
+
+div.multiselect-tree-lvl5 {
+	padding-left: 45px;
+}
+
+div.multiselect-tree-lvl6 {
+	padding-left: 55px;
+}
+
+.ngdialog.ngdialog-theme-wide .ngdialog-content {
+	width: 800px !important;
+}
