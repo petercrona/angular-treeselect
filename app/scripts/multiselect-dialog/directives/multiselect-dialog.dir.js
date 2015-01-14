@@ -7,6 +7,7 @@ angular.module('multiselectDialog')
 			templateUrl: 'scripts/multiselect-dialog/views/multiselect-dialog.html',
 			scope: {
 				treeData: '=',
+				selected: '=',
 				saveHandler: '&',
 				metaFields: '=',
 				onlyLeafNodes: '@',
@@ -72,11 +73,31 @@ angular.module('multiselectDialog')
 					scope.tree = TreeHelper.flattenTree(tree);
 				}
 
+				function setSelected(tree, selected) {
+					var selectedIndex = {};
+					selected.forEach(function(x) {
+						selectedIndex[x] = true;
+					});
+					
+					// Deselect all
+					tree.forEach(function(x) {
+						x.selected = false;
+					});
+					
+					// Select those specified
+					var selectedElems = tree.filter(function(x) {
+						return selectedIndex[x.node.value.value] === true;
+					});
+					selectedElems.forEach(function(x) {
+						selectAll(x);
+					});
+				}
+
 				function mySaveHandler(tree, meta) {
 					if (scope.saveHandler) {
 
 						var selected = tree.filter(function(x) {return x.selected});
-						console.log(scope.onlyLeafNodes);
+						
 						if (scope.onlyLeafNodes === 'true') {
 							selected = selected.filter(function(x) {
 								return x.node.children.length === 0;
@@ -99,6 +120,10 @@ angular.module('multiselectDialog')
 				// Make sure directive stays in sync
 				scope.$watch('treeData', function(newVal) {
 					updateTreeInScope(scope, newVal);
+				});
+
+				scope.$watch('selected', function(newVal) {
+					setSelected(scope.tree, newVal);
 				});
 
 			}

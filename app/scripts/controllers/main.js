@@ -47,11 +47,9 @@ angular.module('multiselectDialogApp')
 		  value: 7,
 	  });
 
-	  $timeout(function() {
-		  console.log(TreeHelper.toJson(myTree));
-	  }, 2000);
-
 	  $scope.treeData = myTree;
+
+	  $scope.selected = [3,4,5,6];
 
 	  $scope.saveHandler = function(tree, metaFields) {
 		  console.log(tree, metaFields);
@@ -81,6 +79,7 @@ angular.module('multiselectDialogApp')
 		  miniScope.saveHandler = $scope.saveHandler;
 		  miniScope.treeData = $scope.treeData;
 		  miniScope.metaFields = $scope.metaFields;
+		  miniScope.selected = $scope.selected;
 		  ngDialog.open({
 			  template: 'templateId',
 			  className: 'ngdialog-theme-default ngdialog-theme-wide',
