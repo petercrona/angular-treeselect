@@ -15,13 +15,6 @@ angular.module('multiselectDialog')
 			},
 			link: function(scope) {
 			
-				function createRawElement(name) {
-					return {
-						name: name,
-						selected: false
-					};
-				}
-
 				function checkParentsSelect(tree) {
 					if (tree.parent.value !== null) { // Don't do this for top level
 						var isSelected = function(x) {
