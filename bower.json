@@ -6,7 +6,8 @@
     "Peter Crona <petercrona89@gmail.com>"
   ],
   "description": "A directive for selecting a subset of a tree.",
-  "main": ["src/treeselect.js","src/views/treeselect.css"],
+  "main": ["src/treeselect.js","src/directives/treeselect.dir.js",
+		   "src/types/tree.typ.js","src/views/treeselect.css"],
   "license": "MIT",
   "ignore": [
     "**/.*",
