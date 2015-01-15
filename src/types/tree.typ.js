@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('multiselectDialog')
+angular.module('treeSelect')
 	.factory('Tree', function() {
 		
 		var Node = function(node, children, value) {

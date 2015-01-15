@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('multiselectDialog')
-	.directive('multiselectDialog', function(Tree, TreeHelper) {
+angular.module('treeSelect')
+	.directive('treeSelect', function(Tree, TreeHelper) {
 		return {
 			restrict: 'E',
-			templateUrl: 'scripts/multiselect-dialog/views/multiselect-dialog.html',
+			templateUrl: 'treeSelectTemplate',
 			scope: {
 				treeData: '=',
 				selected: '=',
